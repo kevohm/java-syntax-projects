@@ -24,22 +24,22 @@ class Calculator{
     }
 
     public boolean validate(String userInput){
-        boolean isValid =  Pattern.matches("[\\d\\+\\-\\*\\%\\/\\s]* ", userInput);
+        boolean isValid =  Pattern.matches("^\\d(\\s[+%\\-*\\/]\\s\\d)+$", userInput);
          if(!isValid){
-                System.out.println("invalid " + userInput);     
+                System.out.println("invalid input. Should be e.g 1 + 3 * 7" + userInput);     
             }
         String[] data = this.parse(userInput);
         boolean doesInvalidValueExist = false;
 
         for(String value: data){
-            boolean isValidValue =  Pattern.matches("[\\d+\\+\\-\\*\\%\\/]", value);
+            boolean isValidValue =  Pattern.matches("[\\d++\\-\\*%\\/]", value);
             if(!isValidValue){
                 doesInvalidValueExist = true;
                
             }
         }
         if(doesInvalidValueExist){
-             System.out.println("invalid format. Should be e.g 1 + 3 * 7");   
+             System.out.println("invalid format. Should be mathematical operators and numbers only");   
         }
         
         return isValid;
