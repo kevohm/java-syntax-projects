@@ -1,22 +1,29 @@
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Main{
 
     public static void main(String [] args){
-
-        Scanner Obj = new Scanner(System.in);
-
+        int exitCount = 0;
+        Calculator myCalc = new Calculator();
+        Scanner Obj = new Scanner(System.in).useDelimiter("\\n");
+        System.out.println("Welcome to CalCli.\nEnter your mathematical equation e.g 2 + 5 / 4. Enjoy:)\n");
         while(true){
             String input = Obj.next();
-
-            if(input == "exit"){
+              // quit
+             boolean isQuit = myCalc.exit(input);
+             if(isQuit){
                 break;
-            }
-            System.out.println(input == "exit");
-            System.out.println("Hello " + input);
-        }
+             }else{
+            // validate input
+            myCalc.validate(input);
+            // parse input
+            String[] data = myCalc.parse(input);
+            // calculate
+             }
 
-        System.out.println("Thanks for using our calculator.\n\n Lots of love :)");
+        }
+        System.out.println("Thanks for using our calculator :)");
 
     }
 
