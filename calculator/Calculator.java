@@ -32,14 +32,14 @@ class Calculator{
         boolean doesInvalidValueExist = false;
 
         for(String value: data){
-            boolean isValidValue =  Pattern.matches("[\\d++\\-\\*%\\/]", value);
+            boolean isValidValue =  Pattern.matches("[\\d+*\\-+\\/%]", value);
             if(!isValidValue){
                 doesInvalidValueExist = true;
                
             }
         }
         if(doesInvalidValueExist){
-             System.out.println("invalid format. Should be mathematical operators and numbers only");   
+             System.out.println("invalid format. Should be mathematical operators and numbers");   
         }
         
         return isValid;

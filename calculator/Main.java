@@ -10,6 +10,7 @@ public class Main{
         System.out.println("Welcome to CalCli.\nEnter your mathematical equation e.g 2 + 5 / 4. Enjoy:)\n");
         while(true){
             String input = Obj.next();
+            input  = input.trim();
               // quit
              boolean isQuit = myCalc.exit(input);
              if(isQuit){
