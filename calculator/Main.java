@@ -12,16 +12,18 @@ public class Main{
             String input = Obj.next();
             input  = input.trim();
               // quit
-             boolean isQuit = myCalc.exit(input);
-             if(isQuit){
+            boolean isQuit = myCalc.exit(input);
+            if(isQuit){
                 break;
-             }else{
+            }else{
             // validate input
             myCalc.validate(input);
             // parse input
             String[] data = myCalc.parse(input);
             // calculate
-             }
+            double answer = myCalc.calculate(input);
+            System.out.println(" = " + answer);
+            }
 
         }
         System.out.println("Thanks for using our calculator :)");
