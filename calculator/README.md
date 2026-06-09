@@ -3,6 +3,9 @@
 ## 📌 Overview
 The CLI Calculator is a simple command-line Java application that performs basic arithmetic operations. It helps reinforce core programming concepts like control flow, methods, and input handling.
 
+## stack
+Uses Java 17
+
 ## ⚙️ Features
 - Supports:
   - Addition (+)
@@ -13,35 +16,41 @@ The CLI Calculator is a simple command-line Java application that performs basic
 - Handles invalid input (e.g., wrong operator, non-numeric values)
 - Prevents division by zero
 - Uses modular methods for clean code structure
-
-## 🧠 Concepts Covered
-- Control Flow (if-else, switch)
-- Methods (modular design)
-- Input Parsing (Scanner)
-- Basic Error Handling
+- Run in REPL since it:
+  - reads user input
+  - evaluates and validates input from user
+  - prints input and output clearly
+  - loops until user types `exit`
 
 ## 🏗️ Project Structure
 cli-calculator/
 │── Main.java
+|── Operation.java
 │── Calculator.java
 │── README.md
 
 - Main.java → Handles user input and program flow  
 - Calculator.java → Contains arithmetic logic  
+- Operation.java → handle supported operations inclusive of exceptions
 
 ## ▶️ How to Run
 1. Compile:
-javac Main.java Calculator.java
-
+```
+javac -d bin *.java
+```
 2. Run:
-java Main
+```
+java -cp bin Main
+```
+3. Alternatively run
+```
+./run.sh
+```
 
 ## 💻 Example Usage
-Enter first number: 10  
-Enter operator (+, -, *, /, %): *  
-Enter second number: 5  
+Input: 10 * 5 - 4
 
-Result: 50
+Result: 46
 
 ## ⚠️ Error Handling
 - Invalid operator → "Unsupported operation"
@@ -50,14 +59,9 @@ Result: 50
 
 ## 🚀 Improvements (Optional)
 - Add advanced operations (power, sqrt)
-- Add continuous calculation loop
 - Store calculation history
 - Build a GUI version
-
-## 📚 Learning Outcome
-- Improved Java syntax understanding  
-- Better grasp of program structure  
-- Experience handling user input and logic  
+ 
 
 ## 🧑‍💻 Author
 Kevin Kipkemboi
