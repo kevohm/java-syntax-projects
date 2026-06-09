@@ -204,8 +204,7 @@ java Main
 ---
 
 ## Author
-
-Your Name
+Kevin Kipkemboi
 
 ---
 
